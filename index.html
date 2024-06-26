@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Diary</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styling for child containers */
+        .child-container {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .child-container .child-item {
+            color: white;
+            padding: 10px;
+        }
+        .child-container .child-item h3 {
+            margin: 0;
+        }
+        .child-container.pink {
+            background-color: pink;
+        }
+        .child-container.blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Child Diary</h1>
+    <div class="child-form">
+        <input type="text" id="child-name" placeholder="Child's Name" required>
+        <input type="date" id="child-birthdate" placeholder="Birthdate" required>
+        <input type="text" id="child-parents" placeholder="Parents' Names" required>
+        <select id="child-gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <button onclick="addChild()">Add Child</button>
+    </div>
+    <div id="children-container"></div>
+
+    <!-- Error and Success Messages -->
+    <div id="error-message" style="display: none; color: red;"></div>
+    <div id="success-message" style="display: none; color: green;"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
