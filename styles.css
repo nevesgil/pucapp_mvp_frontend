@@ -30,7 +30,7 @@ h1 {
 }
 
 .child-form button {
-    background-color: #333;
+    background-color: #ff69b4;
     color: white;
     cursor: pointer;
 }
@@ -50,7 +50,7 @@ h1 {
 
 .child.male {
     background-color: #deeff5; /* Light blue */
-    border-left-color: #deeff5;
+    border-left-color: #0c356e;
 }
 
 .child.female {
@@ -119,4 +119,13 @@ h1 {
 .post-tags-form select {
     padding: 5px;
     margin-right: 5px;
+}
+
+.items-container .item {
+    padding: 10px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #010203;
 }
