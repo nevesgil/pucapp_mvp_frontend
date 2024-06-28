@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Child Diary</title>
+    <title>ChildsNotes</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Child's Notes</h1>
-    <div class="child-form">
+    
+    <!-- Add Child Button -->
+    <button id="show-form-button" class="child-form-button">Add Child</button>
+
+    <!-- Child Form initially hidden -->
+    <div class="child-form" id="child-form" style="display: none;">
         <input type="text" id="child-name" placeholder="Child's Name" required>
         <input type="date" id="child-birthdate" placeholder="Birthdate" required>
         <input type="text" id="child-parents" placeholder="Parents' Names" required>
@@ -16,8 +22,9 @@
             <option value="M">Male</option>
             <option value="F">Female</option>
         </select>
-        <button onclick="addChild()">Add Child</button>
+        <button id="confirm-button" class="child-form-button">Confirm</button>
     </div>
+    
     <div id="children-container"></div>
 
     <!-- Error and Success Messages -->

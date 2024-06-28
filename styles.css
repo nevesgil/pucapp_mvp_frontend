@@ -1,15 +1,22 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
     padding: 20px;
-    background-color: #f0f8ff;
-    color: #333;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url('./ms-pac-man-pac-man-championship-edition-pac-man-256-pac-man-2-the-new-adventures-pac-man.jpg');
+    background-size: 500px 500px;
+    background-repeat: repeat;
+    background-position: center;
+    background-blend-mode: overlay; 
 }
 
 h1 {
     text-align: center;
-    color: #010203;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    color: #000000;
+
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 .child-form {
@@ -19,30 +26,33 @@ h1 {
 
 .child-form input,
 .child-form select,
-.child-form button {
+.child-form button,
+.child-form-button {
     margin: 5px;
     padding: 10px;
     font-size: 16px;
     border: 2px solid #010203;
     border-radius: 5px;
     background-color: #ffebcd;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
-.child-form button {
-    background-color: #ff69b4;
-    color: white;
+.child-form button,
+.child-form-button {
+    background-color: #d1d7ce;
+    color: rgb(7, 5, 5);
     cursor: pointer;
 }
 
-.child-form button:hover {
-    background-color: #ff1493;
+.child-form button:hover,
+.child-form-button:hover {
+    background-color: #81847f;
 }
 
 .child {
     background-color: white;
     padding: 20px;
-    margin: 10px 0;
+    margin: 10px auto;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-left: 10px solid #125878;
@@ -61,7 +71,7 @@ h1 {
 .child h2 {
     margin: 0 0 10px 0;
     color: #010203;
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 .post {
@@ -122,7 +132,7 @@ h1 {
 }
 
 .items-container .item {
-    padding: 10px;
+    padding: 5px;
     background-color: #f8f9fa;
     margin-bottom: 10px;
     border-radius: 5px;

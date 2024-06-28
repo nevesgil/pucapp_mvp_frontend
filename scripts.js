@@ -1,5 +1,18 @@
 const backendUrl = 'http://127.0.0.1:5000';
 
+// Show the form when "Add Child" button is clicked
+document.getElementById("show-form-button").addEventListener("click", function() {
+    document.getElementById("child-form").style.display = "block";
+    document.getElementById("show-form-button").style.display = "none";
+});
+
+// Confirm button to add child and hide form
+document.getElementById("confirm-button").addEventListener("click", function() {
+    addChild();
+    document.getElementById("child-form").style.display = "none";
+    document.getElementById("show-form-button").style.display = "block";
+});
+
 function addChild() {
     const name = document.getElementById('child-name').value;
     const birthdate = document.getElementById('child-birthdate').value;
@@ -38,6 +51,7 @@ function addChild() {
         document.getElementById('child-name').value = '';
         document.getElementById('child-birthdate').value = '';
         document.getElementById('child-parents').value = '';
+        document.getElementById('child-gender').value = 'M';
         fetchItems(); // Fetch items after adding a new child
     })
     .catch(error => {
@@ -70,9 +84,9 @@ function addChildToDOM(child) {
         <p><strong>Parents:</strong> ${child.parents}</p>
         <p><strong>Gender:</strong> ${child.sex}</p>
         <div class="items-container" id="items-${child.id}"></div>
-        <textarea placeholder="New item name" id="new-item-name-${child.id}"></textarea>
+        <textarea placeholder="New post" id="new-item-name-${child.id}"></textarea>
         <button onclick="addItem(${child.id})">Add Post</button>
-        <button onclick="deleteChild(${child.id})">Delete Child</button>
+        <button onclick="deleteChild(${child.id})">Delete whole block</button>
     `;
     childrenContainer.appendChild(childElement);
 }
