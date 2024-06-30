@@ -84,8 +84,11 @@ function fetchTagsForChild(childId) {
         const childElement = document.getElementById(`child-${childId}`);
         const tagsContainer = document.createElement('div');
         tagsContainer.classList.add('tags-container');
-        tagsContainer.innerHTML = `<h4>Tags:</h4>
-                                   <div class="tags-list">${tags.map(tag => `<span class="tag">${tag.name}</span>`).join('')}</div>`;
+
+        // Create tags HTML inline with the "Tags" header
+        tagsContainer.innerHTML = `<h4>Tags: ${tags.map(tag => `<span class="tag">${tag.name}</span>`).join('')}</h4>`;
+        
+        // Append the tags container to the child element
         childElement.appendChild(tagsContainer);
     })
     .catch(error => {
@@ -93,6 +96,7 @@ function fetchTagsForChild(childId) {
         showError('Failed to fetch tags for child. Please try again later.');
     });
 }
+
 
 function addChildToDOM(child) {
     const childrenContainer = document.getElementById('children-container');
@@ -106,12 +110,12 @@ function addChildToDOM(child) {
         <p><strong>Parents:</strong> ${child.parents}</p>
         <p><strong>Gender:</strong> ${child.sex}</p>
         <div class="items-container" id="items-${child.id}"></div>
+        <textarea placeholder="New post" id="new-item-name-${child.id}"></textarea>
+        <button onclick="addItem(${child.id})">Add Post</button>
         <input type="text" id="new-tag-name-${child.id}" placeholder="New Tag Name">
         <button onclick="addTag(${child.id})">Add Tag</button>
         <div class="tags-container" id="tags-container-${child.id}"></div>
-        <textarea placeholder="New post" id="new-item-name-${child.id}"></textarea>
-        <button onclick="deleteChild(${child.id})">Delete whole block</button>
-        <button onclick="addItem(${child.id})">Add Post</button>
+        <button onclick="deleteChild(${child.id})" class="delete-button">Delete whole block</button>
     `;
     childrenContainer.appendChild(childElement);
 
