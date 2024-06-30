@@ -31,7 +31,7 @@ function addChild() {
         sex: gender
     };
 
-    // Send POST request to backend to add child
+    // Send POST request to backend
     fetch(`${backendUrl}/kid`, {
         method: 'POST',
         headers: {
@@ -72,28 +72,6 @@ function showSuccess(message) {
     successMessageElement.style.display = 'block';
 }
 
-function fetchTagsForChild(childId) {
-    fetch(`${backendUrl}/kid/${childId}/tag`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Failed to fetch tags for child.');
-        }
-        return response.json();
-    })
-    .then(tags => {
-        const childElement = document.getElementById(`child-${childId}`);
-        const tagsContainer = document.createElement('div');
-        tagsContainer.classList.add('tags-container');
-        tagsContainer.innerHTML = `<h4>Tags:</h4>
-                                   <div class="tags-list">${tags.map(tag => `<span class="tag">${tag.name}</span>`).join('')}</div>`;
-        childElement.appendChild(tagsContainer);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        showError('Failed to fetch tags for child. Please try again later.');
-    });
-}
-
 function addChildToDOM(child) {
     const childrenContainer = document.getElementById('children-container');
     const childElement = document.createElement('div');
@@ -106,16 +84,11 @@ function addChildToDOM(child) {
         <p><strong>Parents:</strong> ${child.parents}</p>
         <p><strong>Gender:</strong> ${child.sex}</p>
         <div class="items-container" id="items-${child.id}"></div>
-        <input type="text" id="new-tag-name-${child.id}" placeholder="New Tag Name">
-        <button onclick="addTag(${child.id})">Add Tag</button>
-        <div class="tags-container" id="tags-container-${child.id}"></div>
         <textarea placeholder="New post" id="new-item-name-${child.id}"></textarea>
-        <button onclick="deleteChild(${child.id})">Delete whole block</button>
         <button onclick="addItem(${child.id})">Add Post</button>
+        <button onclick="deleteChild(${child.id})">Delete whole block</button>
     `;
     childrenContainer.appendChild(childElement);
-
-    fetchTagsForChild(child.id); // Fetch tags after adding the child
 }
 
 function fetchAndDisplayChildren() {
@@ -183,7 +156,7 @@ function addItem(childId) {
         kid_id: childId
     };
 
-    // Send POST request to backend to add item
+    // Send POST request to backend
     fetch(`${backendUrl}/item`, {
         method: 'POST',
         headers: {
@@ -216,49 +189,6 @@ function addItem(childId) {
     .catch(error => {
         console.error('Error:', error);
         showError('Failed to add item. Please try again later.');
-    });
-}
-
-function addTag(childId) {
-    const tagName = document.getElementById(`new-tag-name-${childId}`).value;
-
-    if (!tagName) {
-        showError('Please enter a tag name.');
-        return;
-    }
-
-    const tag = {
-        name: tagName
-    };
-
-    // Send POST request to backend to add tag for child
-    fetch(`${backendUrl}/kid/${childId}/tag`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(tag)
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Failed to add tag.');
-        }
-        return response.json();
-    })
-    .then(data => {
-        showSuccess('Tag added successfully!');
-        const tagsContainer = document.getElementById(`tags-container-${childId}`);
-        if (tagsContainer) {
-            const tagElement = document.createElement('span');
-            tagElement.classList.add('tag');
-            tagElement.textContent = data.name;
-            tagsContainer.appendChild(tagElement);
-        }
-        document.getElementById(`new-tag-name-${childId}`).value = '';
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        showError('Failed to add tag. Please try again later.');
     });
 }
 

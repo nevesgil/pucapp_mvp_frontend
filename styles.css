@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 10px;
@@ -9,16 +10,15 @@ body {
     background-size: 500px 500px;
     background-repeat: repeat;
     background-position: center;
-    background-blend-mode: overlay; 
+    background-blend-mode: overlay;
 }
 
 h1 {
     text-align: center;
     color: #000000;
-
-    font-family: 'Poppins', Arial, sans-serif;
 }
 
+/* Form styles */
 .child-form {
     text-align: center;
     margin-bottom: 20px;
@@ -26,29 +26,26 @@ h1 {
 
 .child-form input,
 .child-form select,
-.child-form button,
-.child-form-button {
+.child-form button {
     margin: 5px;
     padding: 10px;
     font-size: 16px;
     border: 2px solid #010203;
     border-radius: 5px;
     background-color: #ffebcd;
-    font-family: 'Poppins', Arial, sans-serif;
 }
 
-.child-form button,
-.child-form-button {
+.child-form button {
     background-color: #d1d7ce;
     color: rgb(7, 5, 5);
     cursor: pointer;
 }
 
-.child-form button:hover,
-.child-form-button:hover {
+.child-form button:hover {
     background-color: #81847f;
 }
 
+/* Child block styles */
 .child {
     background-color: white;
     padding: 20px;
@@ -71,9 +68,9 @@ h1 {
 .child h2 {
     margin: 0 0 10px 0;
     color: #010203;
-    font-family: 'Poppins', Arial, sans-serif;
 }
 
+/* Post styles */
 .post {
     background-color: #fff;
     padding: 10px;
@@ -85,8 +82,12 @@ h1 {
     border: 2px solid #010203;
 }
 
-.tags {
+/* Tags styles */
+.tags,
+.tags-container {
     margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .tag {
@@ -114,23 +115,7 @@ h1 {
     padding: 5px 10px;
 }
 
-.tags-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.post-tags-form {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-}
-
-.post-tags-form select {
-    padding: 5px;
-    margin-right: 5px;
-}
-
+/* Item container styles */
 .items-container .item {
     padding: 5px;
     background-color: #f8f9fa;
@@ -138,4 +123,38 @@ h1 {
     border-radius: 5px;
     box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1);
     border: 1px solid #010203;
+}
+
+/* Delete button styles */
+.child .delete-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #ffc107; /* Yellow-warning color */
+    color: #000; /* Text color for button */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.child .delete-button:hover {
+    background-color: #ffca28; /* Lighter shade of yellow */
+}
+
+/* Revert style for Add Child button */
+#show-form-button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #010203;
+    border-radius: 5px;
+    background-color: #d1d7ce; /* Reverted background color */
+    color: rgb(7, 5, 5);
+    cursor: pointer;
+}
+
+#show-form-button:hover {
+    background-color: #81847f;
 }
