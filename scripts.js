@@ -183,7 +183,7 @@ function addItem(childId) {
             `;
             childItemsContainer.appendChild(itemElement);
         }
-        document.getElementById(`new-item-name-${childId}`).value = ''; // Clear input
+        document.getElementById(`new-item-name-${childId}`).value = ''; 
         showSuccess('Item added successfully!');
     })
     .catch(error => {
