@@ -110,10 +110,14 @@ function addChildToDOM(child) {
         <p><strong>Parents:</strong> ${child.parents}</p>
         <p><strong>Gender:</strong> ${child.sex}</p>
         <div class="items-container" id="items-${child.id}"></div>
-        <textarea placeholder="New post" id="new-item-name-${child.id}"></textarea>
-        <button onclick="addItem(${child.id})">Add Post</button>
-        <input type="text" id="new-tag-name-${child.id}" placeholder="New Tag Name">
-        <button onclick="addTag(${child.id})">Add Tag</button>
+        <div class="add-item-container">
+            <textarea placeholder="New post" id="new-item-name-${child.id}"></textarea>
+            <button onclick="addItem(${child.id})">Add Post</button>
+        </div>
+        <div class="add-tag-container">
+            <input type="text" id="new-tag-name-${child.id}" placeholder="New Tag Name">
+            <button onclick="addTag(${child.id})">Add Tag</button>
+        </div>
         <div class="tags-container" id="tags-container-${child.id}"></div>
         <button onclick="deleteChild(${child.id})" class="delete-button">Delete whole block</button>
     `;
