@@ -18,7 +18,7 @@ h1 {
     color: #000000;
 }
 
-/* Form styles */
+/* Form*/
 .child-form {
     text-align: center;
     margin-bottom: 20px;
@@ -45,7 +45,7 @@ h1 {
     background-color: #81847f;
 }
 
-/* Child block styles */
+/* Child*/
 .child {
     background-color: white;
     padding: 20px;
@@ -71,7 +71,7 @@ h1 {
     color: #010203;
 }
 
-/* Post styles */
+/* Post*/
 .post {
     background-color: #fff;
     padding: 10px;
@@ -83,7 +83,7 @@ h1 {
     border: 2px solid #010203;
 }
 
-/* Tags styles */
+/* Tags*/
 .tags,
 .tags-container {
     margin-top: 10px;
@@ -133,7 +133,7 @@ h1 {
 }
 
 
-/* Item container styles */
+/* Item*/
 .items-container .item {
     padding: 5px;
     background-color: #f8f9fa;
@@ -160,13 +160,13 @@ h1 {
 }
 
 
-/* Delete button styles */
+/* Delete button*/
 .child .delete-button {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    background-color: #ffc107; /* Yellow-warning color */
-    color: #000; /* Text color for button */
+    background-color: #ffc107; 
+    color: #000; 
     border: none;
     padding: 5px 10px;
     cursor: pointer;
@@ -175,17 +175,17 @@ h1 {
 }
 
 .child .delete-button:hover {
-    background-color: #ffca28; /* Lighter shade of yellow */
+    background-color: #ffca28; 
 }
 
-/* Revert style for Add Child button */
+/* Add Child button */
 #show-form-button {
     margin: 5px;
     padding: 10px;
     font-size: 16px;
     border: 2px solid #010203;
     border-radius: 5px;
-    background-color: #d1d7ce; /* Reverted background color */
+    background-color: #d1d7ce;
     color: rgb(7, 5, 5);
     cursor: pointer;
 }

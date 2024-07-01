@@ -1,12 +1,12 @@
 const backendUrl = 'http://127.0.0.1:5000';
 
-// Show the form when "Add Child" button is clicked
+// Display button for add child
 document.getElementById("show-form-button").addEventListener("click", function() {
     document.getElementById("child-form").style.display = "block";
     document.getElementById("show-form-button").style.display = "none";
 });
 
-// Confirm button to add child and hide form
+// Confirmi button
 document.getElementById("confirm-button").addEventListener("click", function() {
     addChild();
     document.getElementById("child-form").style.display = "none";
@@ -31,7 +31,7 @@ function addChild() {
         sex: gender
     };
 
-    // Send POST request to backend to add child
+    // POST
     fetch(`${backendUrl}/kid`, {
         method: 'POST',
         headers: {
@@ -85,10 +85,10 @@ function fetchTagsForChild(childId) {
         const tagsContainer = document.createElement('div');
         tagsContainer.classList.add('tags-container');
 
-        // Create tags HTML inline with the "Tags" header
+        // Inline Tags
         tagsContainer.innerHTML = `<h4>Tags: ${tags.map(tag => `<span class="tag">${tag.name}</span>`).join('')}</h4>`;
         
-        // Append the tags container to the child element
+        // Append
         childElement.appendChild(tagsContainer);
     })
     .catch(error => {
@@ -123,7 +123,7 @@ function addChildToDOM(child) {
     `;
     childrenContainer.appendChild(childElement);
 
-    fetchTagsForChild(child.id); // Fetch tags after adding the child
+    fetchTagsForChild(child.id);
 }
 
 function fetchAndDisplayChildren() {
@@ -140,7 +140,7 @@ function fetchAndDisplayChildren() {
         children.forEach(child => {
             addChildToDOM(child);
         });
-        fetchItems(); // Fetch items after displaying children
+        fetchItems(); // Fetch items
     })
     .catch(error => {
         console.error('Error:', error);
@@ -191,7 +191,7 @@ function addItem(childId) {
         kid_id: childId
     };
 
-    // Send POST request to backend to add item
+    // POST
     fetch(`${backendUrl}/item`, {
         method: 'POST',
         headers: {
@@ -239,7 +239,7 @@ function addTag(childId) {
         name: tagName
     };
 
-    // Send POST request to backend to add tag for child
+    //  POST
     fetch(`${backendUrl}/kid/${childId}/tag`, {
         method: 'POST',
         headers: {
