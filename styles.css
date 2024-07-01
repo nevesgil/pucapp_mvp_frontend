@@ -5,7 +5,7 @@ body {
     margin-left: 200px;
     margin-right: 200px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.03);
     background-image: url('./pacman-background.jpg');
     background-size: 500px 500px;
     background-repeat: repeat;
