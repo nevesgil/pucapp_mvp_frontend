@@ -6,7 +6,7 @@ document.getElementById("show-form-button").addEventListener("click", function()
     document.getElementById("show-form-button").style.display = "none";
 });
 
-// Confirmi button
+// Confirm button
 document.getElementById("confirm-button").addEventListener("click", function() {
     addChild();
     document.getElementById("child-form").style.display = "none";
@@ -97,7 +97,6 @@ function fetchTagsForChild(childId) {
     });
 }
 
-
 function addChildToDOM(child) {
     const childrenContainer = document.getElementById('children-container');
     const childElement = document.createElement('div');
@@ -105,25 +104,37 @@ function addChildToDOM(child) {
     childElement.classList.add(child.sex === 'M' ? 'male' : 'female');
     childElement.id = `child-${child.id}`;
     childElement.innerHTML = `
-        <h3>${child.name}</h3>
-        <p><strong>Birthdate:</strong> ${child.birthdate}</p>
-        <p><strong>Parents:</strong> ${child.parents}</p>
-        <p><strong>Gender:</strong> ${child.sex}</p>
-        <div class="items-container" id="items-${child.id}"></div>
-        <div class="add-item-container">
-            <textarea placeholder="New post" id="new-item-name-${child.id}"></textarea>
-            <button onclick="addItem(${child.id})">Add Post</button>
+        <h3 class="child-name" data-child-id="${child.id}">${child.name} ></h3>
+        <div class="child-details" id="child-details-${child.id}" style="display: none;">
+            <p><strong>Birthdate:</strong> ${child.birthdate}</p>
+            <p><strong>Parents:</strong> ${child.parents}</p>
+            <p><strong>Gender:</strong> ${child.sex}</p>
+            <div class="items-container" id="items-${child.id}"></div>
+            <div class="add-item-container">
+                <textarea placeholder="New post" id="new-item-name-${child.id}"></textarea>
+                <button onclick="addItem(${child.id})">Add Post</button>
+            </div>
+            <div class="add-tag-container">
+                <input type="text" id="new-tag-name-${child.id}" placeholder="New Tag Name">
+                <button onclick="addTag(${child.id})">Add Tag</button>
+            </div>
+            <div class="tags-container" id="tags-container-${child.id}"></div>
+            <button onclick="deleteChild(${child.id})" class="delete-button">Delete whole block</button>
         </div>
-        <div class="add-tag-container">
-            <input type="text" id="new-tag-name-${child.id}" placeholder="New Tag Name">
-            <button onclick="addTag(${child.id})">Add Tag</button>
-        </div>
-        <div class="tags-container" id="tags-container-${child.id}"></div>
-        <button onclick="deleteChild(${child.id})" class="delete-button">Delete whole block</button>
     `;
     childrenContainer.appendChild(childElement);
 
     fetchTagsForChild(child.id);
+
+    // Add event listener to toggle visibility
+    childElement.querySelector('.child-name').addEventListener('click', function() {
+        const childDetails = document.getElementById(`child-details-${child.id}`);
+        if (childDetails.style.display === "none") {
+            childDetails.style.display = "block";
+        } else {
+            childDetails.style.display = "none";
+        }
+    });
 }
 
 function fetchAndDisplayChildren() {
@@ -239,7 +250,7 @@ function addTag(childId) {
         name: tagName
     };
 
-    //  POST
+    // POST
     fetch(`${backendUrl}/kid/${childId}/tag`, {
         method: 'POST',
         headers: {

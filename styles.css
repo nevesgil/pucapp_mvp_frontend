@@ -71,6 +71,15 @@ h1 {
     color: #010203;
 }
 
+.child-name {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.child-details {
+    margin-top: 10px;
+}
+
 /* Post*/
 .post {
     background-color: #fff;
