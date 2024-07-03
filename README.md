@@ -36,12 +36,20 @@ Obs: o desenvolvimento foi feito com o Firefox.
 
 i) Criação de um bloco para uma criança:
     
-    Clique no botão 'Add Child'.
+Clique no botão 'Add Child'.
 
-    ![addchild](/doc_images/create1.png)
+![addchild1](/doc_images/create1.png)
     
-    Preencha as informações referentes, sendo todas mandatórias.
+!Preencha as informações referentes, sendo todas mandatórias.
 
-    ![addchild](/doc_images/create2.png)
-    
+![addchild2](/doc_images/create2.png)
+
+
+ii) Expanda o bloco clicando sobre o nome.
+
+![bloco1](/doc_images/bloco1.png)
+
+iii) Crie posts e tags referentes à criança diretamente nos respectivos blocos.
+
+![bloco2](/doc_images/bloco2.png)
     
