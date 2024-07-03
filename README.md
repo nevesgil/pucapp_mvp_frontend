@@ -7,7 +7,6 @@ Uma aplicação web para gerenciar e acompanhar as atividades e notas das crian�
 - [Funcionalidades](#funcionalidades)
 - [Instalação](#instalação)
 - [Uso](#uso)
-- [Contribuição](#contribuição)
 
 ## Introdução
 ChildsNotes é uma aplicação web projetada para ajudar pais e responsáveis a gerenciar as atividades, notas e outras informações relevantes das crianças. A aplicação utiliza um formato de acordeão para alternar a visibilidade dos detalhes, itens e tags de cada criança.
@@ -40,7 +39,7 @@ Clique no botão 'Add Child'.
 
 ![addchild1](/doc_images/create1.png)
     
-!Preencha as informações referentes, sendo todas mandatórias.
+Preencha as informações referentes, sendo todas mandatórias.
 
 ![addchild2](/doc_images/create2.png)
 
