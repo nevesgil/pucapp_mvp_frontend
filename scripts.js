@@ -85,7 +85,6 @@ function fetchTagsForChild(childId) {
         const tagsContainer = document.createElement('div');
         tagsContainer.classList.add('tags-container');
 
-        // Inline Tags
         tagsContainer.innerHTML = `<h4>Tags: ${tags.map(tag => `<span class="tag">${tag.name}</span>`).join('')}</h4>`;
         
         // Append
@@ -126,7 +125,7 @@ function addChildToDOM(child) {
 
     fetchTagsForChild(child.id);
 
-    // Add event listener to toggle visibility
+    // Toggle visibility
     childElement.querySelector('.child-name').addEventListener('click', function() {
         const childDetails = document.getElementById(`child-details-${child.id}`);
         if (childDetails.style.display === "none") {
